@@ -1,0 +1,39 @@
+body {
+    background-color: #621402;
+    color: #fff;
+    font-family: 'Roboto', 'Arial', sans-serif;
+}
+.container {
+    margin: 0 auto;
+    max-width: 1170px;
+}
+.header {
+    display: flex;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.logo {
+    padding-right: 57px;
+}
+.menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+.menu__item + .menu__item {
+    margin-left: 25px;
+}
+.menu__link {
+    color: inherit;
+    text-decoration: none;
+}
+.user {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+.user__hello {
+    padding-right: 11px;
+}
