@@ -9,9 +9,10 @@ body {
 .container {
     margin: 0 auto;
     max-width: 1170px;
+    width: 90%;
 }
 .header {
-    min-height: 100vh;
+    padding-bottom: 60px;
     background: linear-gradient(180deg, rgba(98, 20, 2, 0.31) 0%, #621402 85.62%), url("../img/bg.jpg") no-repeat center top / cover;
 }
 .navbar {
@@ -19,6 +20,9 @@ body {
     align-items: center;
     padding-top: 30px;
     padding-bottom: 30px;
+}
+.nav {
+    position: relative;
 }
 .logo {
     padding-right: 57px;
@@ -28,6 +32,9 @@ body {
     padding: 0;
     list-style: none;
     display: flex;
+}
+.menu-button {
+    display: none;
 }
 .menu__item + .menu__item {
     margin-left: 25px;
@@ -153,7 +160,7 @@ body {
     cursor: pointer;
 }
 .session__cinema-select {
-    min-width: 470px;
+    width: 470px;
 }
 
 /*scheme*/
@@ -161,6 +168,9 @@ body {
     margin-bottom: 40px;
     background: rgba(36, 36, 36, 0.18);
     border-radius: 10px;
+}
+.scheme-svg {
+    max-width: 1170px;
 }
 .scheme path:not(.light) {
     fill:rgba(255, 255, 255, 0.2);
@@ -180,6 +190,7 @@ body {
     display: flex;
     align-items: center;
     max-width: 1024px;
+    width: 90%;
     margin: 0 auto;
     padding-top: 22px;
     padding-bottom: 38px;
@@ -221,4 +232,151 @@ body {
     font-size: 18px;
     line-height: 21px;
     cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+    .container {
+        max-width: 960px;
+    }
+    .session__cinema-select {
+        width: 100%;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        max-width: 750px;
+    }
+    .menu__item + .menu__item {
+        margin-left: 20px;
+    }
+    .session {
+        flex-wrap: wrap;
+    }
+    .session__date {
+        flex-basis: 70%;
+        padding-bottom: 30px;
+    }
+    .session__cinema {
+        order: 3;
+    }
+    .session__time {
+        order: 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 560px;
+    }
+    .menu__item + .menu__item {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+    .logo {
+        padding-right: 20px;
+    }
+    .menu-button {
+        display: block;
+        background-color: transparent;
+        border: none;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+    }
+    .menu {
+        position: absolute;
+        top: 20px;
+        left: -27px;
+        flex-direction: column;
+        background-color: #621402;
+        border-radius: 10px;
+        padding: 20px;
+        z-index: 1;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-100%);
+        transition: opacity .3s, transform .5s;
+    }
+    .is-open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+    .film {
+        flex-direction: column;
+    }
+    .film__info {
+        padding-bottom: 40px;
+    }
+    .film__info-descr {
+        margin-right: 20px;
+    }
+    .film__trailer {
+        margin-right: auto;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 525px) {
+    .session__date {
+        flex-basis: 100%;
+    }
+    .session__date-block {
+        justify-content: space-between;
+    }
+    .session__date-item {
+        margin-right: 0;
+    }
+    .session__date-item:not(:last-child) {
+        margin-right: 15px;
+    }
+    .legend {
+        justify-content: space-between;
+    }
+    .legend-label {
+        margin-right: 0;
+    }
+    .legend svg {
+        margin-right: 5px;
+    }
+    .price-button {
+        padding: 20px 40px;
+    }
+    .price-tag__total, .price-tag__ruble {
+        font-size: 43px;
+        line-height: 49px;
+    }
+}
+
+@media (max-width: 450px) {
+    .session__date-item {
+        padding: 9px 20px;
+    }
+}
+
+@media (max-width: 405px) {
+    .select {
+        margin-top: 0;
+    }
+    .price {
+        flex-wrap: wrap;
+    }
+    .price-tag {
+        padding-right: 10px;
+        margin-bottom: 20px;
+    }
+    .session__time {
+        margin-bottom: 30px;
+        padding-right: 10px;
+    }
+}
+
+@media (max-width: 390px) {
+    .session__date {
+        overflow-x: scroll;
+    }
+    .legend {
+        flex-wrap: wrap;
+    }
 }
